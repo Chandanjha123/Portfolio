@@ -6,10 +6,9 @@ export const metadata = {
   title: "Contact",
 };
 
-// Dynamically import the Form component
 const Form = dynamic(() => import("@/components/contact/Form"), {
   loading: () => (
-    <div className="w-full min-h-screen flex justify-center py-12">
+    <div className="w-full flex justify-center py-12">
       <div className="animate-pulse h-8 w-8 rounded-full bg-accent/20" />
     </div>
   ),
@@ -18,34 +17,36 @@ const Form = dynamic(() => import("@/components/contact/Form"), {
 
 export default function Contact() {
   return (
-    <>
-      <Image
-        src={bg}
-        alt="Next.js Portfolio website's contact page background image"
-        priority
-        quality={80}
-        placeholder="blur"
-        fill
-        sizes="100vw"
-        className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-50"
-      />
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Fixed Background Image */}
+      <div className="fixed inset-0 -z-50">
+        <Image
+          src={bg}
+          alt="Background image"
+          priority
+          quality={80}
+          placeholder="blur"
+          fill
+          sizes="100vw"
+          className="object-cover object-center opacity-50"
+        />
+      </div>
 
-      <article className="relative w-full flex flex-col items-center justify-center py-8 sm:py-0 space-y-8">
-        <div className="flex flex-col items-center justify-center space-y-6 w-full sm:w-3/4">
-          <h1 className="text-accent font-semibold text-center text-4xl capitalize">
+      {/* Fixed Centered Content */}
+      <div className="fixed inset-0 flex items-center justify-center p-4">
+        <article className="w-full sm:w-3/4 max-w-2xl flex flex-col items-center space-y-4">
+          <h1 className="text-accent font-semibold text-center text-3xl sm:text-4xl capitalize">
             summon the wizard
           </h1>
-          <p className="text-center font-light text-sm xs:text-base max-w-2xl px-4">
+          <p className="text-center font-light text-sm sm:text-base">
             Step into the circle of enchantment and weave your words into the
-            fabric of the cosmos. Whether you seek to conjure collaborations,
-            unlock mysteries, or simply share tales of adventure, your messages
-            are treasured scrolls within this realm. Use the form below to send
-            your missives through the ethereal network, and await the whisper of
-            magic in response.
+            fabric of the cosmos...
           </p>
-        </div>
-        <Form />
-      </article>
-    </>
+          <div className="w-full mt-4">
+            <Form />
+          </div>
+        </article>
+      </div>
+    </div>
   );
 }

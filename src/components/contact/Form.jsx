@@ -25,57 +25,55 @@ export default function Form() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const sendEmail = (params) => {
-  
-      toast.promise(
-        emailjs.send(
-          "service_znbl6gd", 
-          "template_ql5zbig", 
-          params, 
-          {
-            publicKey: "TFYW7MopdxwmKzyBS",
-            limitRate: {
-              throttle: 5000,
-            }
-          }
-        ),
+    toast.promise(
+      emailjs.send(
+        "service_znbl6gd", 
+        "template_ql5zbig", 
+        params, 
         {
-          loading: 'Sending your message...',
-          success: () => {
-            return 'Message cast successfully!';
-          },
-          error: (err) => {
-            console.error('EmailJS error:', err);
-            return 'Failed to cast message. Please try again.';
-          },
+          publicKey: "TFYW7MopdxwmKzyBS",
+          limitRate: {
+            throttle: 5000,
+          }
         }
-      );
+      ),
+      {
+        loading: 'Sending your message...',
+        success: () => {
+          return 'Message cast successfully!';
+        },
+        error: (err) => {
+          console.error('EmailJS error:', err);
+          return 'Failed to cast message. Please try again.';
+        },
+      }
+    );
+  };
+  
+  const onSubmit = (data) => {
+    const templateParams = {
+      from_name: data.name,
+      to_name: "Chandan jha",
+      reply_to: data.email,
+      message: data.message,
     };
-    
-    const onSubmit = (data) => {
-      const templateParams = {
-        from_name: data.name,
-        to_name: "Chandan jha", // Make sure this matches your template
-        reply_to: data.email,
-        message: data.message,
-        // Add any other required parameters your template needs
-      };
-    
-      sendEmail(templateParams);
-    };
+    sendEmail(templateParams);
+  };
 
   return (
     <>
-      <Toaster richColors={true} />
+      <Toaster richColors />
       <motion.form
         variants={container}
         initial="hidden"
         animate="show"
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-md w-full flex flex-col items-center justify-center space-y-4"
+        className="w-full flex flex-col items-center space-y-4" // Changed from max-w-md to w-full
       >
         <motion.input
           variants={item}
@@ -133,8 +131,7 @@ export default function Form() {
           variants={item}
           value="Cast your message!"
           className="px-10 py-4 rounded-md shadow-lg bg-background border border-accent/30 border-solid
-      hover:shadow-glass-sm backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 cursor-pointer capitalize
-      "
+          hover:shadow-glass-sm backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 cursor-pointer capitalize"
           type="submit"
         />
       </motion.form>
