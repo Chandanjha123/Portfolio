@@ -9,7 +9,7 @@ export const metadata = {
 // Dynamically import the Form component
 const Form = dynamic(() => import("@/components/contact/Form"), {
   loading: () => (
-    <div className="w-full flex justify-center py-12">
+    <div className="w-full min-h-screen flex justify-center py-12">
       <div className="animate-pulse h-8 w-8 rounded-full bg-accent/20" />
     </div>
   ),

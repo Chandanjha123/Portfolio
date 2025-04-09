@@ -22,7 +22,7 @@ export const projectsData = [
     name: "3D Solar System",
     description: "A Real Looking 3D Solar System",
     date: "2024-08-02",
-    demoLink: "https://github.com/Chandanjha123/3D-SOLAR-SYSTEM/tree/my-new-branch/solar-system",
+    demoLink: "https://github.com/Chandanjha123/solarsystem.git",
   },
   {
     id: 2,
