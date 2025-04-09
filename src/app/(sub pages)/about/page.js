@@ -35,7 +35,7 @@ export default function Home() {
             Chandan Jha
           </h1>
           <p className="font-light text-foreground text-lg">
-           Thanks For Visiting Chandan Jha's Portfolio Website.
+          {`Thanks For Visiting Chandan Jha's Portfolio Website.`}
           </p>
         </div>
       </div>

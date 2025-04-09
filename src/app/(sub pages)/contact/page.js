@@ -1,10 +1,20 @@
 import Image from "next/image";
 import bg from "../../../../public/background/contact-background.png";
-import Form from "@/components/contact/Form";
+import dynamic from "next/dynamic";
 
 export const metadata = {
   title: "Contact",
 };
+
+// Dynamically import the Form component
+const Form = dynamic(() => import("@/components/contact/Form"), {
+  loading: () => (
+    <div className="w-full flex justify-center py-12">
+      <div className="animate-pulse h-8 w-8 rounded-full bg-accent/20" />
+    </div>
+  ),
+  ssr: false,
+});
 
 export default function Contact() {
   return (
@@ -13,6 +23,9 @@ export default function Contact() {
         src={bg}
         alt="Next.js Portfolio website's contact page background image"
         priority
+        quality={80}
+        placeholder="blur"
+        fill
         sizes="100vw"
         className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-50"
       />
@@ -22,7 +35,7 @@ export default function Contact() {
           <h1 className="text-accent font-semibold text-center text-4xl capitalize">
             summon the wizard
           </h1>
-          <p className="text-center font-light text-sm xs:text-base">
+          <p className="text-center font-light text-sm xs:text-base max-w-2xl px-4">
             Step into the circle of enchantment and weave your words into the
             fabric of the cosmos. Whether you seek to conjure collaborations,
             unlock mysteries, or simply share tales of adventure, your messages
