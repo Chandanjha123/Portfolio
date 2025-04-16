@@ -114,7 +114,7 @@ export const BtnList = [
   },
   {
     label: "Resume",
-    link: "https://drive.google.com/file/d/1Wy3JaCXj48DWjuEzeTNnMsOnILHpSz12/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1tP13CM3ZQbZICL1Hp7fqDbFrnB2keCNN/view?usp=sharing",
     icon: "resume",
     newTab: true,
   },
