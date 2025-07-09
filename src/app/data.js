@@ -64,7 +64,7 @@ export const projectsData = [
     name: "StudyBuddy",
     description: "Collaborative learning platform",
     date: "2022-04-18",
-    demoLink: "https://studybuddy.example.com",
+    demoLink: "chandanjhaflappybird.netlify.app",
   },
   {
     id: 8,
