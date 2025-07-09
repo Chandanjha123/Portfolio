@@ -57,7 +57,7 @@ export const projectsData = [
     name: "Todos-List",
     description: "Task management app",
     date: "2025-10-03",
-    demoLink: "https://github.com/Chandanjha123/MyTodoList/tree/main/todo-list-premium",
+    demoLink: "chandanjhatodolistpremium.netlify.app",
   },
   {
     id: 7,
