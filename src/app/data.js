@@ -22,7 +22,7 @@ export const projectsData = [
     name: "3D Solar System",
     description: "A Real Looking 3D Solar System",
     date: "2024-08-02",
-    demoLink: "https://github.com/Chandanjha123/solarsystem.git",
+    demoLink: "https://chandanjha3dsolar-system.netlify.app/",
   },
   {
     id: 2,
@@ -57,7 +57,7 @@ export const projectsData = [
     name: "Todos-List",
     description: "Task management app",
     date: "2025-10-03",
-    demoLink: "chandanjhatodolistpremium.netlify.app",
+    demoLink: "https://chandanjhatodolistpremium.netlify.app",
   },
   {
     id: 7,
